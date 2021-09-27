@@ -35,11 +35,7 @@ namespace project_nikitosa
             this.ColorProp = Color;
         }
 
-        public Marker()
-        {
-            this.CountOfUsingProp  = 0;
-            this.ColorProp = System.ConsoleColor.White;
-        }
+       
 
         public void write(string str){
             if(str != null){
