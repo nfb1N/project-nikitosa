@@ -15,7 +15,7 @@ namespace project_nikitosa
        
        public Drob()
        {
-           this.Nomen = 1;
+           this.Nomen = 0;
            this.DeNomen = 1;
        }
 
@@ -48,12 +48,25 @@ namespace project_nikitosa
       public static bool operator<(Drob first, Drob second){
        return first.Nomen*second.DeNomen < first.DeNomen*second.DeNomen;  
       }
-      //TEXT
+      //MUST
 
       public override string ToString()
         {
             return $"{this.Nomen}/{this.DeNomen}";
         }
+    
+         public override bool Equals(object obj)
+        {
+            if(obj is Drob)
+                return ((obj as Drob) == this);
+                return false;
+         }
+
+        public override int GetHashCode()
+        {
+             return (this.Nomen.GetHashCode() + this.DeNomen.GetHashCode()  );
+        }
+    
       //SIMPLE FUNC 
       public Drob reduction(){
         int min;
@@ -70,5 +83,6 @@ namespace project_nikitosa
         }
         return this;
       }
-    }   
+    }
+     
 }
