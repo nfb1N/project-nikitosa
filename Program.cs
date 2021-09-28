@@ -6,10 +6,16 @@ namespace project_nikitosa
     {
         static void Main(string[] args)
         {
-          Marker mark = new Marker(-12, ConsoleColor.DarkRed);
-          string s = "null";
-          mark.write(s);
-          System.Console.WriteLine($"count of using: {mark.CountOfUsingProp}");
+          Drob dr1 = new Drob(2, 5);
+          Drob dr2 = new Drob(3, 4);
+          Console.WriteLine($"first: {dr1}\n second: {dr2}");
+          Console.WriteLine($"first > second?: {dr1 > dr2}");
+          Console.WriteLine($"first == second?: {dr1 == dr2}");
+          
+          Drob dr3 = dr1 + dr2;
+          Console.WriteLine($"first + second: {dr3}");
+          Console.WriteLine($"reduction: {dr3.reduction()}");
+          
         }
 
     }
